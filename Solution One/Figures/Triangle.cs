@@ -26,7 +26,9 @@ namespace SquareLibrary.Figures
             return Math.Sqrt(semiperimeter * (semiperimeter - _side1) * (semiperimeter - _side2) * (semiperimeter - _side3));
         }
 
-        public bool IsRight() => _side1 == _side2 && _side1 == _side3;
+        public bool IsRight() => _side1 * _side1 + _side2 * _side2 == _side3 * _side3 ||
+                                 _side1 * _side1 + _side3 * _side3 == _side2 * _side2 ||
+                                 _side2 * _side2 + _side3 * _side3 == _side1 * _side1 ||;
 
         private bool IsTriangleExist(double side1, double side2, double side3) 
         {
