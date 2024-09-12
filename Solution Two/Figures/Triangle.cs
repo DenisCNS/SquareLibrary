@@ -26,17 +26,19 @@ namespace SquareLibrary.Solution_Two.Figures
             return Math.Sqrt(semiperimeter * (semiperimeter - _side1) * (semiperimeter - _side2) * (semiperimeter - _side3));
         }
 
-        public bool IsRight() => _side1 == _side2 && _side1 == _side3;
+        public bool IsRight() => _side1 * _side1 + _side2 * _side2 == _side3 * _side3 ||
+                                 _side1 * _side1 + _side3 * _side3 == _side2 * _side2 ||
+                                 _side2 * _side2 + _side3 * _side3 == _side1 * _side1 ||;
 
-        private bool IsTriangleExist(double side1, double side2, double side3)
+        private bool IsTriangleExist(double side1, double side2, double side3) 
         {
             if (side1 <= 0 || side2 <= 0 || side3 <= 0)
             {
                 return false;
             }
 
-            var p = (side1 + side2 + side3) / 2;
-            if (p <= side1 || p <= side2 || p <= side3)
+            var semiperimeter = (side1 + side2 + side3) / 2;
+            if (semiperimeter <= side1 || semiperimeter <= side2 || semiperimeter <= side3)
             {
                 return false;
             }
