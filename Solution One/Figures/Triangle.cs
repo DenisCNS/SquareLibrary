@@ -37,8 +37,8 @@ namespace SquareLibrary.Figures
                 return false;
             }
 
-            var p = (side1 + side2 + side3) / 2;
-            if (p <= side1 || p <= side2 || p <= side3)
+            var semiperimeter = (side1 + side2 + side3) / 2;
+            if (semiperimeter <= side1 || semiperimeter <= side2 || semiperimeter <= side3)
             {
                 return false;
             }
