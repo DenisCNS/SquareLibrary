@@ -17,9 +17,6 @@ namespace SquareLibrary.Figures
 
         public override double GetSquare() => Math.PI * Math.Pow(_radius, 2);
 
-        private bool IsCircleExist(double radius) 
-        {
-            return radius > 0;
-        }
+        private bool IsCircleExist(double radius) => radius > 0;        
     }
 }
